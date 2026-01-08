@@ -56,11 +56,11 @@ export default function Dashboard() {
 
     // Add patients section
     csvRows.push("RECENT PATIENTS");
-    csvRows.push("Name,Diagnosis,Status,Date");
+    csvRows.push("Name,Email,Phone,Status,Created Date");
 
-    patientsResp.data.data.forEach((patient: Patient) => {
+    patientsData.forEach((patient) => {
       csvRows.push(
-        `${patient.name},${patient.diagnosis},${patient.status},${patient.date}`
+        `${patient.name},${patient.email},${patient.phone},${patient.status},${patient.signUpDate}`
       );
     });
 

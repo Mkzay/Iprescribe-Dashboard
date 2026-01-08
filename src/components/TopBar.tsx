@@ -17,10 +17,7 @@ interface TopBarProps {
   sidebarOpen?: boolean;
 }
 
-export default function TopBar({
-  onSidebarToggle,
-  sidebarOpen = true,
-}: TopBarProps) {
+export default function TopBar({ onSidebarToggle }: TopBarProps) {
   const { mode, toggleMode } = useThemeStore();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);

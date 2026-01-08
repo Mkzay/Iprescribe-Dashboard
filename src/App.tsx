@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
@@ -36,13 +36,11 @@ function App() {
     }
   }, [mode]);
 
-  const currentTheme = {
-    ...theme,
+  const currentTheme = createTheme(theme, {
     palette: {
-      ...theme.colorSchemes[mode].palette,
       mode,
     },
-  };
+  });
 
   if (!isLoggedIn) {
     return (
